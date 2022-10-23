@@ -2,6 +2,8 @@ package co.edu.unab.cuotaadmon.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -10,6 +12,7 @@ import javax.persistence.Table;
 public class ResidentesModel {
     // atributos
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "Id_residente")
     private int idResidente;
     @Column(name = "Tipo_doc")
@@ -29,9 +32,9 @@ public class ResidentesModel {
     @Column(name = "Id_rol")
     private int idRol;
     @Column(name = "Telefono")
-    private int telefono;
+    private double telefono;
     @Column(name = "Celular")
-    private int celular;
+    private double celular;
     @Column(name = "Correo_e")
     private String correoElectronico;
 
@@ -41,7 +44,7 @@ public class ResidentesModel {
 
     // Constructor con argumentos
     public ResidentesModel(int idResidente, String tipoDoc, int numeroDoc, String primerNombre, String segundoNombre,
-            String primerApellido, String segundoApellido, int idApto, int idRol, int telefono, int celular,
+            String primerApellido, String segundoApellido, int idApto, int idRol, double telefono, double celular,
             String correoElectronico) {
         this.idResidente = idResidente;
         this.tipoDoc = tipoDoc;
@@ -58,7 +61,6 @@ public class ResidentesModel {
     }
 
     // getter and setter
-
     public int getIdResidente() {
         return idResidente;
     }
@@ -131,19 +133,19 @@ public class ResidentesModel {
         this.idRol = idRol;
     }
 
-    public int getTelefono() {
+    public double getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(int telefono) {
+    public void setTelefono(double telefono) {
         this.telefono = telefono;
     }
 
-    public int getCelular() {
+    public double getCelular() {
         return celular;
     }
 
-    public void setCelular(int celular) {
+    public void setCelular(double celular) {
         this.celular = celular;
     }
 
