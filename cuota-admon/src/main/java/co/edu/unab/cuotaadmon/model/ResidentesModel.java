@@ -21,7 +21,7 @@ import lombok.Setter;
 public class ResidentesModel {
     // atributos
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "Id_residente")
     private int idResidente;
     @Column(name = "Tipo_doc")
