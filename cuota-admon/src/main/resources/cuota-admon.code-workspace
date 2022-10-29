@@ -2,9 +2,13 @@
     "folders": [
         {
             "path": "../../.."
+        },
+        {
+            "path": "../../../../FrontEnd"
         }
     ],
     "settings": {
-        "java.configuration.updateBuildConfiguration": "interactive"
+        "java.configuration.updateBuildConfiguration": "interactive",
+        "liveServer.settings.multiRootWorkspaceName": "FrontEnd"
     }
 }

@@ -14,8 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.fasterxml.jackson.annotation.JsonTypeInfo.Id;
-
 import co.edu.unab.cuotaadmon.model.ResidentesModel;
 import co.edu.unab.cuotaadmon.service.ResidentesServices;
 
