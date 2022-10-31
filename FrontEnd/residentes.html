@@ -65,7 +65,7 @@
 
 </body>
 <script>
-    async function loadResidentes(){
+        async function loadResidentes(){
         const options = { method: 'GET' };
         const res = await fetch('http://localhost:8080/residentes/all', options);
         const data = await res.json();
@@ -85,7 +85,8 @@
                   <td><button id="btn-edit" class="btn btn-success" onclick="editarResidente(${element.idResidente})">Editar</button></td>
                   </tr>`
         }document.getElementById("contenido").innerHTML = tbody;
-    }
+    }   
+                  
 
     function eliminarResidente(id) {
         if (confirm("Seguro de eliminar?")) {
@@ -97,6 +98,7 @@
             .catch(err => console.error(err));
         }
       }
-    loadResidentes();   
+  loadResidentes();  
+  
 </script>
 </html>
