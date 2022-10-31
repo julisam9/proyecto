@@ -47,7 +47,7 @@
     </div>
   </nav>
   <header><h1>Lista de Residentes</h1></header>
-  <table class="table table-hover" id="tabla_residentes">
+  <table class="table table-hover">
     <thead>
       <tr>
         <th scope="col">Id</th>
@@ -56,11 +56,10 @@
         <th scope="col">Tipo Documento</th>
         <th scope="col">Numero Documento</th>
         <th scope="col">E-mail</th>
-        <th scope="col">Apartamento</th>
+        <th scope="col">Id Apartamento</th>
       </tr>
     </thead>
-    <tbody>
-      
+    <tbody id="contenido">      
     </tbody>
   </table>
 
@@ -70,8 +69,34 @@
         const options = { method: 'GET' };
         const res = await fetch('http://localhost:8080/residentes/all', options);
         const data = await res.json();
-        console.log(data);
+        //console.log(data);
+        let tbody="";
+        for (let index = 0; index < data.length; index++) {
+          const element = data[index];
+          tbody+=`<tr>
+                  <td>${element.idResidente}</td>
+                  <td>${element.primerNombre}</td>
+                  <td>${element.primerApellido}</td>
+                  <td>${element.tipoDoc}</td>
+                  <td>${element.numeroDoc}</td>
+                  <td>${element.correoElectronico}</td>
+                  <td>${element.idApto}</td>
+                  <td><button id="btn-delete" class="btn btn-danger" onclick="eliminarResidente(${element.idResidente})">Eliminar</button></td>
+                  <td><button id="btn-edit" class="btn btn-success" onclick="editarResidente(${element.idResidente})">Editar</button></td>
+                  </tr>`
+        }document.getElementById("contenido").innerHTML = tbody;
     }
+
+    function eliminarResidente(id) {
+        if (confirm("Seguro de eliminar?")) {
+          const options = { method: 'DELETE' };
+          fetch('http://localhost:8080/residentes/' + id, options)
+            .then(response => {
+              loadResidentes();
+            })
+            .catch(err => console.error(err));
+        }
+      }
     loadResidentes();   
 </script>
 </html>
