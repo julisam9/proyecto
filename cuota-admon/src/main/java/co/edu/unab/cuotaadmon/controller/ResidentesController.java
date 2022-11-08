@@ -38,7 +38,7 @@ public class ResidentesController {
         return residentesServices.getResidentesById(id);
     }
 
-    @PostMapping(path = "/guardar")
+    @PostMapping()
     public String guardarResidente(@RequestBody ResidentesModel residente) {
         return residentesServices.saveResidentes(residente);
 
