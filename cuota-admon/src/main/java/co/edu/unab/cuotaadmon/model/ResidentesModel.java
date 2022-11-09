@@ -30,20 +30,10 @@ public class ResidentesModel {
     private int numeroDoc;
     @Column(name = "Nom1")
     private String primerNombre;
-    @Column(name = "Nom2")
-    private String segundoNombre;
     @Column(name = "Ape1")
     private String primerApellido;
-    @Column(name = "Ape2")
-    private String segundoApellido;
     @Column(name = "Id_apto")
     private int idApto;
-    @Column(name = "Id_rol")
-    private int idRol;
-    @Column(name = "Telefono")
-    private double telefono;
-    @Column(name = "Celular")
-    private double celular;
     @Column(name = "Correo_e")
     private String correoElectronico;
 

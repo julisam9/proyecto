@@ -34,17 +34,21 @@ function eliminarResidente(id) {
 
 function guardarResidente(){
     let primerNombre=document.getElementById("nombre").value;
+    let primerApellido=document.getElementById("apellido").value;
+    let tipoDoc=document.getElementById("tipodoc").value;
+    let numeroDoc=document.getElementById("documento").value;
+    let idApto=document.getElementById("apto").value;
     let correoElectronico=document.getElementById("email").value;
     
     const options = {
         method: 'POST',
         headers:{"Content-type":"application/json"},
-        body: JSON.stringify({primerNombre,correoElectronico})
+        body: JSON.stringify({primerNombre,correoElectronico,primerApellido,tipoDoc,numeroDoc,idApto})
       };
       
       fetch('http://localhost:8080/residentes', options)
         .then(response => response.json())
-        .then(response => {console.log(response);loadResidentes})
+        .then(response => {console.log(response);loadResidentes()})
         .catch(err => console.error(err));
 }
 
